@@ -1,5 +1,6 @@
 package Inputs;
 
+import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
@@ -22,13 +23,16 @@ public class Mouseinputs implements MouseMotionListener,MouseListener
     @Override
     public void mouseMoved(java.awt.event.MouseEvent e)
     {
-        gamepanel.setRectPos(e.getX(),e.getY());
+        
     }
 
     @Override
     public void mouseClicked(java.awt.event.MouseEvent e)
     {
-        System.out.println("mouse clicked");
+        if(e.getButton() == MouseEvent.BUTTON1)
+        {
+            gamepanel.getgame().getPlayer().setattacking(true);
+        }
     }
 
     @Override
